@@ -1,4 +1,4 @@
-﻿<!-- Website Code Built from Claude Artifact -->
+<!-- Website Code Built from Claude Artifact -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -233,23 +233,6 @@
     <button class="bp" onclick="document.getElementById(&#39;main&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;conf&#39;).style.display=&#39;none&#39;;window.scrollTo(0,0)" data-en="← Back to site" data-es="← Volver al sitio">← Back to site</button>
   </div>
 </div>
-<script>
-const CL={l:'en'};
-function switchLang(l){
-  CL.l=l;
-  document.documentElement.lang=l;
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    const t=el.getAttribute('data-'+l);
-    if(!t)return;
-    if((el.tagName==='H1'||el.tagName==='H2')&&t.includes('<span'))el.innerHTML=t;
-    else el.textContent=t;
-  });
-  document.getElementById('btnEN').classList.toggle('on',l==='en');
-  document.getElementById('btnES').classList.toggle('on',l==='es');
-}
-function goSec(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-function closeBanner(){document.getElementById('lbanner').style.display='none';}
-function pick(btn){
 <script src="script.js"></script>
 </body>
 </html>

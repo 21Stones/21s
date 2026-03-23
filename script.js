@@ -35,12 +35,34 @@ function goStep(n) {
   }
 }
 
-function doSubmit() {
+async function doSubmit() {
+  const btn1 = document.querySelector('#s1 .ob.sel span:not(.oc)');
+  const btn2 = document.querySelector('#s2 .ob.sel span:not(.oc)');
+  const rev = btn1 ? btn1.getAttribute('data-en') || btn1.textContent : '';
+  const chal = btn2 ? btn2.getAttribute('data-en') || btn2.textContent : '';
+  const goals = document.getElementById('gtxt').value;
+
+  const url = 'https://bgnnoliwvahvhdpftmzw.supabase.co/rest/v1/contacts';
+  const key = 'sb_publishable_kZSqsUnygVIed6TBdoyHLg_NaOOnr31';
+
+  try {
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': key,
+        'Authorization': `Bearer ${key}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ revenue: rev, challenge: chal, goals: goals })
+    });
+  } catch(e) {
+    console.error('Supabase error:', e);
+  }
+
   document.getElementById('main').style.display = 'none';
   const c = document.getElementById('conf');
-  if (c) {
-    c.style.display = 'flex';
-  }
+  if (c) c.style.display = 'block';
   switchLang(CL.l);
   window.scrollTo(0, 0);
 }
