@@ -13,7 +13,7 @@ body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;line-height:1
 h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:68px;}
 .nl{background:#C5A059;border-radius:5px;padding:4px 10px;cursor:pointer;display:flex;align-items:center;}
-.nl img{height:44px;display:block;}
+.nl span{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#003153;letter-spacing:1px;}
 .nc{display:flex;gap:20px;list-style:none;}
 .nc a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.9);cursor:pointer;}
 .nc a:hover{color:#C5A059;}
@@ -23,9 +23,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .lb.on{background:#C5A059;color:#003153;}
 .bp{background:#C5A059;color:#003153;padding:10px 22px;border-radius:var(--r);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;}
 .bp:hover{background:#D4B570;}
-/* HERO */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 6vw 80px;overflow:hidden;}
-.hbg{position:absolute;inset:0;background-image:url('21%20j.png');background-size:cover;background-position:center;}
+.hbg{position:absolute;inset:0;background-size:cover;background-position:center;}
 .hov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(0,49,83,0.95) 48%,rgba(0,49,83,0.55) 100%);}
 .hc{position:relative;z-index:2;max-width:640px;}
 .hey{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C5A059;margin-bottom:22px;display:flex;align-items:center;gap:8px;}
@@ -40,15 +39,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .si:last-child{border-right:none;padding-right:0;}
 .sn{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#C5A059;display:block;}
 .sl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-top:3px;display:block;}
-/* TAMPA BANNER */
-#tampa{position:relative;height:320px;overflow:hidden;}
+#tampa{position:relative;height:300px;overflow:hidden;}
 #tampa img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
-#tampa .tov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,49,83,0.85) 0%,rgba(0,49,83,0.3) 100%);}
+#tampa .tov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,49,83,0.88),rgba(0,49,83,0.3));}
 #tampa .tc{position:absolute;inset:0;display:flex;align-items:center;padding:0 6vw;z-index:2;}
-#tampa h2{font-size:clamp(22px,3vw,40px);font-weight:800;color:#fff;max-width:500px;}
+#tampa h2{font-size:clamp(22px,3vw,38px);font-weight:800;color:#fff;max-width:500px;}
 #tampa h2 span{color:#C5A059;}
 #tampa p{font-size:14px;color:rgba(255,255,255,0.85);margin-top:10px;max-width:420px;}
-/* ABOUT */
 #about{padding:90px 6vw;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 .ai{border-radius:var(--r);overflow:hidden;height:480px;position:relative;}
 .ai img{width:100%;height:100%;object-fit:cover;}
@@ -61,7 +58,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .ah{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
 .ad{width:6px;height:6px;background:#C5A059;border-radius:50%;margin-top:9px;flex-shrink:0;}
 .ah p{margin:0;font-size:14px;color:#444;}
-/* TEAM STRIP */
 #team{background:#F4F4F4;padding:70px 6vw;}
 .tg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;}
 .tc2{border-radius:var(--r);overflow:hidden;position:relative;height:340px;}
@@ -69,7 +65,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .tc2 .tlab{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(0,49,83,0.92),transparent);}
 .tc2 .tlab h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#fff;}
 .tc2 .tlab p{font-size:12px;color:#C5A059;letter-spacing:1px;text-transform:uppercase;}
-/* SERVICES */
 #sectores{background:#fff;padding:90px 6vw;}
 .sec-header{text-align:center;margin-bottom:48px;}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -82,9 +77,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .sic{width:36px;height:36px;border:1px solid #C5A059;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;}
 .sc h3{font-size:16px;font-weight:700;color:#003153;margin-bottom:8px;}
 .sc p{font-size:13px;color:#555;line-height:1.65;}
-/* WHY US */
 #valor{background:#003153;padding:90px 6vw;position:relative;overflow:hidden;}
-.vbg{position:absolute;inset:0;background-image:url('21%20i.png');background-size:cover;background-position:center;opacity:0.08;}
+.vbg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.08;}
 .vc{position:relative;z-index:2;}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);overflow:hidden;margin-top:48px;}
 .pl{padding:44px 36px;border-right:1px solid rgba(255,255,255,0.1);}
@@ -93,16 +87,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .pn{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:#C5A059;margin-bottom:18px;display:block;}
 .pl h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:12px;}
 .pl p{font-size:14px;color:rgba(255,255,255,0.83);line-height:1.75;}
-/* CTA SUNSET */
 #cta{position:relative;overflow:hidden;}
-#cta .cbg{position:absolute;inset:0;background-image:url('21%20d.jpg');background-size:cover;background-position:center;}
+#cta .cbg{position:absolute;inset:0;background-size:cover;background-position:center;}
 #cta .cov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,49,83,0.93) 52%,rgba(0,49,83,0.5) 100%);}
 #cta .cc{position:relative;z-index:2;padding:80px 6vw;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 #cta h2{font-size:clamp(20px,2.8vw,34px);font-weight:800;color:#fff;max-width:500px;line-height:1.25;}
 #cta h2 span{color:#C5A059;}
 .cr{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
 .cn{font-size:12px;color:rgba(255,255,255,0.78);}
-/* CONTACT */
 #contacto{background:#F4F4F4;padding:90px 6vw;}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1100px;margin:0 auto;}
 .cinfo{display:flex;flex-direction:column;gap:24px;}
@@ -119,12 +111,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.97
 .fi-inp:focus{border-color:#C5A059;}
 .fta{width:100%;padding:14px 16px;border:1px solid #DDD;border-radius:var(--r);font-family:'Open Sans',sans-serif;font-size:14px;color:#333;resize:vertical;min-height:110px;outline:none;transition:border .2s;}
 .fta:focus{border-color:#C5A059;}
-.fn{display:flex;justify-content:flex-end;margin-top:24px;}
-/* FOOTER */
+.fn2{display:flex;justify-content:flex-end;margin-top:24px;}
 footer{background:#003153;padding:52px 6vw 28px;}
 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:52px;margin-bottom:44px;}
 .flw{display:inline-block;background:#C5A059;padding:5px 9px;border-radius:var(--r);margin-bottom:10px;}
-.flw img{height:46px;display:block;}
+.flw span{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#003153;}
 .fb p{font-size:13px;color:rgba(255,255,255,0.73);line-height:1.8;max-width:250px;margin-top:8px;}
 .fc h4{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C5A059;margin-bottom:16px;}
 .fc ul{list-style:none;}
@@ -137,18 +128,15 @@ footer{background:#003153;padding:52px 6vw 28px;}
 .fleg{display:flex;gap:18px;}
 .fleg a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;}
 .fleg a:hover{color:#C5A059;}
-.lang-bar{position:fixed;bottom:20px;right:20px;z-index:200;background:#003153;border:1px solid #C5A059;border-radius:var(--r);padding:12px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 28px rgba(0,0,0,0.3);}
+.lang-bar{position:fixed;bottom:20px;right:20px;z-index:200;background:#003153;border:1px solid #C5A059;border-radius:var(--r);padding:12px 18px;display:none;align-items:center;gap:10px;box-shadow:0 8px 28px rgba(0,0,0,0.3);}
 .lang-bar p{font-size:12px;color:rgba(255,255,255,0.9);}
 .lbb{background:#C5A059;color:#003153;border:none;padding:6px 14px;border-radius:var(--r);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;cursor:pointer;text-transform:uppercase;}
 .lbx{background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:17px;line-height:1;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.fi{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s;}
-.fi.v{opacity:1;transform:none;}
 @media(max-width:860px){
   .nc{display:none;}
-  #about{grid-template-columns:1fr;}
+  #about,.tg,.contact-grid{grid-template-columns:1fr;}
   .ai{height:300px;}
-  .sg,.pg,.tg,.contact-grid{grid-template-columns:1fr;}
+  .sg,.pg{grid-template-columns:1fr;}
   .pl{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
   .ft{grid-template-columns:1fr;gap:28px;}
   .hst{position:static;margin-top:40px;flex-wrap:wrap;gap:16px;}
@@ -169,8 +157,7 @@ footer{background:#003153;padding:52px 6vw 28px;}
 
 <nav>
   <div class="nl" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer;">
-    <img src="21%20j.png" alt="21 Stones Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-    <span style="display:none;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#003153;">21 STONES</span>
+    <span>21 STONES</span>
   </div>
   <ul class="nc">
     <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-en="About" data-es="Nosotros">About</a></li>
@@ -187,11 +174,10 @@ footer{background:#003153;padding:52px 6vw 28px;}
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="hbg"></div>
+  <div class="hbg" style="background-image:url('21%20j.png')"></div>
   <div class="hov"></div>
-  <div class="hc fi">
+  <div class="hc">
     <div class="hey" data-en="Tampa, Florida · Trusted Accounting Partner" data-es="Tampa, Florida · Su Socio Contable de Confianza">Tampa, Florida · Trusted Accounting Partner</div>
     <h1 data-en="Financial Clarity.<br><span>Strategic Growth.</span>" data-es="Claridad Financiera.<br><span>Crecimiento Estratégico.</span>">Financial Clarity.<br><span>Strategic Growth.</span></h1>
     <p class="hs" data-en="21 Stones Accounting LLC delivers expert accounting, tax, and advisory services — helping businesses and individuals in Tampa and beyond build a stronger financial future." data-es="21 Stones Accounting LLC ofrece servicios expertos de contabilidad, impuestos y asesoría — ayudando a empresas e individuos en Tampa y más allá a construir un futuro financiero más sólido.">21 Stones Accounting LLC delivers expert accounting, tax, and advisory services — helping businesses and individuals in Tampa and beyond build a stronger financial future.</p>
@@ -200,35 +186,33 @@ footer{background:#003153;padding:52px 6vw 28px;}
       <span class="hn" data-en="✓ No commitment required" data-es="✓ Sin compromiso">✓ No commitment required</span>
     </div>
   </div>
-  <div class="hst fi">
+  <div class="hst">
     <div class="si"><span class="sn">500+</span><span class="sl" data-en="Clients Served" data-es="Clientes Atendidos">Clients Served</span></div>
     <div class="si"><span class="sn">15+</span><span class="sl" data-en="Years Experience" data-es="Años de Experiencia">Years Experience</span></div>
     <div class="si"><span class="sn">98%</span><span class="sl" data-en="Client Retention" data-es="Retención de Clientes">Client Retention</span></div>
   </div>
 </section>
 
-<!-- TAMPA BANNER -->
 <section id="tampa">
-  <img src="https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?w=1400&auto=format&fit=crop" alt="Tampa Florida skyline">
+  <img src="https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?w=1400&auto=format&fit=crop" alt="Tampa Florida">
   <div class="tov"></div>
   <div class="tc">
     <div>
       <h2 data-en="Proudly Serving <span>Tampa Bay</span> & Beyond" data-es="Sirviendo con Orgullo a <span>Tampa Bay</span> y Más">Proudly Serving <span>Tampa Bay</span> & Beyond</h2>
-      <p data-en="Local expertise with a global mindset. We understand the Tampa business landscape and are here to help your business thrive." data-es="Experiencia local con visión global. Entendemos el entorno empresarial de Tampa y estamos aquí para ayudar a que su negocio prospere.">Local expertise with a global mindset. We understand the Tampa business landscape and are here to help your business thrive.</p>
+      <p data-en="Local expertise with a global mindset. We understand the Tampa business landscape." data-es="Experiencia local con visión global. Entendemos el entorno empresarial de Tampa.">Local expertise with a global mindset. We understand the Tampa business landscape.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="ai fi">
+  <div class="ai">
     <img src="21%20h.png" alt="21 Stones Team">
     <div class="aib" data-en="Tampa's Trusted Accounting Team" data-es="El Equipo Contable de Confianza de Tampa">Tampa's Trusted Accounting Team</div>
   </div>
-  <div class="at fi">
+  <div class="at">
     <div class="ey" data-en="About Us" data-es="Sobre Nosotros">About Us</div>
     <h2 class="tt" data-en="Your Trusted Financial Partner" data-es="Su Socio Financiero de Confianza">Your Trusted Financial Partner</h2>
-    <p data-en="At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. Based in Tampa, Florida, our team brings decades of combined experience to help you navigate complex financial landscapes." data-es="En 21 Stones Accounting LLC, creemos que una gestión financiera sólida es la base de todo negocio exitoso. Con sede en Tampa, Florida, nuestro equipo aporta décadas de experiencia combinada para ayudarle a navegar entornos financieros complejos.">At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. Based in Tampa, Florida, our team brings decades of combined experience to help you navigate complex financial landscapes.</p>
+    <p data-en="At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. Based in Tampa, Florida, our team brings decades of combined experience to help you navigate complex financial landscapes." data-es="En 21 Stones Accounting LLC, creemos que una gestión financiera sólida es la base de todo negocio exitoso. Con sede en Tampa, Florida, nuestro equipo aporta décadas de experiencia para ayudarle a navegar entornos financieros complejos.">At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. Based in Tampa, Florida, our team brings decades of combined experience to help you navigate complex financial landscapes.</p>
     <div class="ah"><div class="ad"></div><p data-en="Personalized accounting solutions tailored to your unique needs" data-es="Soluciones contables personalizadas según sus necesidades únicas">Personalized accounting solutions tailored to your unique needs</p></div>
     <div class="ah"><div class="ad"></div><p data-en="Proactive tax planning to minimize liabilities and maximize savings" data-es="Planificación fiscal proactiva para minimizar obligaciones y maximizar ahorros">Proactive tax planning to minimize liabilities and maximize savings</p></div>
     <div class="ah"><div class="ad"></div><p data-en="Strategic advisory services to support growth and expansion" data-es="Servicios de asesoría estratégica para apoyar el crecimiento y la expansión">Strategic advisory services to support growth and expansion</p></div>
@@ -236,21 +220,20 @@ footer{background:#003153;padding:52px 6vw 28px;}
   </div>
 </section>
 
-<!-- TEAM -->
 <section id="team">
   <div style="text-align:center;">
     <div class="ey" style="justify-content:center;" data-en="Our Team" data-es="Nuestro Equipo">Our Team</div>
     <h2 class="tt" data-en="Experts Dedicated to Your Success" data-es="Expertos Dedicados a Su Éxito">Experts Dedicated to Your Success</h2>
   </div>
   <div class="tg">
-    <div class="tc2 fi">
+    <div class="tc2">
       <img src="21%20b.png" alt="Financial Advisor">
       <div class="tlab">
         <h3 data-en="Financial Advisory" data-es="Asesoría Financiera">Financial Advisory</h3>
         <p data-en="Strategic Planning" data-es="Planificación Estratégica">Strategic Planning</p>
       </div>
     </div>
-    <div class="tc2 fi">
+    <div class="tc2">
       <img src="21%20i.png" alt="Client Consultation">
       <div class="tlab">
         <h3 data-en="Client Consultation" data-es="Consulta con Clientes">Client Consultation</h3>
@@ -260,95 +243,86 @@ footer{background:#003153;padding:52px 6vw 28px;}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="sectores">
-  <div class="sec-header fi">
+  <div class="sec-header">
     <div class="ey" style="justify-content:center;" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</div>
     <h2 class="tt" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
   </div>
   <div class="sg">
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20a.png" alt="Bookkeeping"></div>
-      <div class="sb">
-        <div class="sic">📊</div>
+      <div class="sb"><div class="sic">📊</div>
         <h3 data-en="Bookkeeping" data-es="Teneduría de Libros">Bookkeeping</h3>
-        <p data-en="Accurate, timely bookkeeping services so you always know where your business stands financially." data-es="Servicios de contabilidad precisos y puntuales para que siempre sepa la situación financiera de su negocio.">Accurate, timely bookkeeping services so you always know where your business stands financially.</p>
+        <p data-en="Accurate, timely bookkeeping so you always know where your business stands financially." data-es="Contabilidad precisa y puntual para que siempre sepa la situación financiera de su negocio.">Accurate, timely bookkeeping so you always know where your business stands financially.</p>
       </div>
     </div>
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20b.png" alt="Tax Preparation"></div>
-      <div class="sb">
-        <div class="sic">📋</div>
+      <div class="sb"><div class="sic">📋</div>
         <h3 data-en="Tax Preparation" data-es="Preparación de Impuestos">Tax Preparation</h3>
-        <p data-en="Individual and business tax returns prepared with precision to ensure compliance and maximize refunds." data-es="Declaraciones de impuestos individuales y empresariales preparadas con precisión para garantizar el cumplimiento y maximizar los reembolsos.">Individual and business tax returns prepared with precision to ensure compliance and maximize refunds.</p>
+        <p data-en="Individual and business tax returns prepared with precision to maximize refunds." data-es="Declaraciones de impuestos individuales y empresariales preparadas con precisión.">Individual and business tax returns prepared with precision to maximize refunds.</p>
       </div>
     </div>
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20i.png" alt="Business Advisory"></div>
-      <div class="sb">
-        <div class="sic">💼</div>
+      <div class="sb"><div class="sic">💼</div>
         <h3 data-en="Business Advisory" data-es="Asesoría Empresarial">Business Advisory</h3>
-        <p data-en="Strategic guidance to help your business grow, from entity selection to financial forecasting." data-es="Orientación estratégica para hacer crecer su negocio, desde la selección de entidad hasta la proyección financiera.">Strategic guidance to help your business grow, from entity selection to financial forecasting.</p>
+        <p data-en="Strategic guidance to help your business grow from entity selection to forecasting." data-es="Orientación estratégica para hacer crecer su negocio desde la selección de entidad.">Strategic guidance to help your business grow from entity selection to forecasting.</p>
       </div>
     </div>
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20h.png" alt="Financial Reporting"></div>
-      <div class="sb">
-        <div class="sic">📈</div>
+      <div class="sb"><div class="sic">📈</div>
         <h3 data-en="Financial Reporting" data-es="Informes Financieros">Financial Reporting</h3>
-        <p data-en="Clear, detailed financial statements and reports that give you actionable insights into your business." data-es="Estados financieros e informes claros y detallados que le brindan información útil sobre su negocio.">Clear, detailed financial statements and reports that give you actionable insights into your business.</p>
+        <p data-en="Clear, detailed financial statements that give you actionable insights into your business." data-es="Estados financieros claros y detallados con información útil sobre su negocio.">Clear, detailed financial statements that give you actionable insights into your business.</p>
       </div>
     </div>
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20j.png" alt="IRS Representation"></div>
-      <div class="sb">
-        <div class="sic">🏛️</div>
+      <div class="sb"><div class="sic">🏛️</div>
         <h3 data-en="IRS Representation" data-es="Representación ante el IRS">IRS Representation</h3>
-        <p data-en="Professional representation and support during audits, disputes, and IRS correspondence." data-es="Representación y apoyo profesional durante auditorías, disputas y correspondencia con el IRS.">Professional representation and support during audits, disputes, and IRS correspondence.</p>
+        <p data-en="Professional representation during audits, disputes, and IRS correspondence." data-es="Representación profesional durante auditorías, disputas y correspondencia con el IRS.">Professional representation during audits, disputes, and IRS correspondence.</p>
       </div>
     </div>
-    <div class="sc fi">
+    <div class="sc">
       <div class="sim"><img src="21%20a.png" alt="Payroll Services"></div>
-      <div class="sb">
-        <div class="sic">💰</div>
+      <div class="sb"><div class="sic">💰</div>
         <h3 data-en="Payroll Services" data-es="Servicios de Nómina">Payroll Services</h3>
-        <p data-en="Complete payroll processing and compliance management so you can focus on running your business." data-es="Procesamiento completo de nómina y gestión de cumplimiento para que pueda concentrarse en dirigir su negocio.">Complete payroll processing and compliance management so you can focus on running your business.</p>
+        <p data-en="Complete payroll processing so you can focus on running your business." data-es="Procesamiento completo de nómina para que pueda concentrarse en su negocio.">Complete payroll processing so you can focus on running your business.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section id="valor">
-  <div class="vbg"></div>
+  <div class="vbg" style="background-image:url('21%20i.png')"></div>
   <div class="vc">
     <div style="text-align:center;">
       <div class="ey" style="justify-content:center;" data-en="Why Choose Us" data-es="Por Qué Elegirnos">Why Choose Us</div>
       <h2 class="tt w" data-en="The 21 Stones Difference" data-es="La Diferencia 21 Stones">The 21 Stones Difference</h2>
     </div>
     <div class="pg">
-      <div class="pl fi">
+      <div class="pl">
         <span class="pn" data-en="01 — Expertise" data-es="01 — Experiencia">01 — Expertise</span>
         <h3 data-en="Certified Professionals" data-es="Profesionales Certificados">Certified Professionals</h3>
-        <p data-en="Our team of CPAs and accounting professionals brings deep expertise across industries, ensuring your finances are in the most qualified hands." data-es="Nuestro equipo de CPAs y profesionales contables aporta profunda experiencia en diversas industrias, garantizando que sus finanzas estén en las manos más calificadas.">Our team of CPAs and accounting professionals brings deep expertise across industries, ensuring your finances are in the most qualified hands.</p>
+        <p data-en="Our team of CPAs brings deep expertise across industries, ensuring your finances are in the most qualified hands." data-es="Nuestro equipo de CPAs aporta profunda experiencia garantizando que sus finanzas estén en las manos más calificadas.">Our team of CPAs brings deep expertise across industries, ensuring your finances are in the most qualified hands.</p>
       </div>
-      <div class="pl fi">
+      <div class="pl">
         <span class="pn" data-en="02 — Trust" data-es="02 — Confianza">02 — Trust</span>
         <h3 data-en="Integrity First" data-es="Integridad Primero">Integrity First</h3>
-        <p data-en="We operate with the highest ethical standards. Our clients trust us with their most sensitive financial information, and we take that responsibility seriously." data-es="Operamos con los más altos estándares éticos. Nuestros clientes nos confían su información financiera más sensible, y tomamos esa responsabilidad muy en serio.">We operate with the highest ethical standards. Our clients trust us with their most sensitive financial information, and we take that responsibility seriously.</p>
+        <p data-en="We operate with the highest ethical standards. Our clients trust us with their most sensitive financial information." data-es="Operamos con los más altos estándares éticos. Nuestros clientes nos confían su información financiera más sensible.">We operate with the highest ethical standards. Our clients trust us with their most sensitive financial information.</p>
       </div>
-      <div class="pl fi">
+      <div class="pl">
         <span class="pn" data-en="03 — Results" data-es="03 — Resultados">03 — Results</span>
         <h3 data-en="Measurable Impact" data-es="Impacto Medible">Measurable Impact</h3>
-        <p data-en="From tax savings to streamlined processes, we deliver real, tangible results that contribute directly to your financial success and peace of mind." data-es="Desde ahorros fiscales hasta procesos optimizados, entregamos resultados reales y tangibles que contribuyen directamente a su éxito financiero y tranquilidad.">From tax savings to streamlined processes, we deliver real, tangible results that contribute directly to your financial success and peace of mind.</p>
+        <p data-en="From tax savings to streamlined processes, we deliver real results that contribute to your financial success." data-es="Desde ahorros fiscales hasta procesos optimizados, entregamos resultados reales para su éxito financiero.">From tax savings to streamlined processes, we deliver real results that contribute to your financial success.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section id="cta">
-  <div class="cbg"></div>
+  <div class="cbg" style="background-image:url('21%20d.jpg')"></div>
   <div class="cov"></div>
   <div class="cc">
     <h2 data-en="Ready to Take Control of <span>Your Finances?</span>" data-es="¿Listo para Tomar Control de <span>Sus Finanzas?</span>">Ready to Take Control of <span>Your Finances?</span></h2>
@@ -359,30 +333,22 @@ footer{background:#003153;padding:52px 6vw 28px;}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contacto">
   <div class="sec-header" style="text-align:center;margin-bottom:40px;">
     <div class="ey" style="justify-content:center;" data-en="Get In Touch" data-es="Contáctenos">Get In Touch</div>
     <h2 class="tt" data-en="Schedule a Free Consultation" data-es="Agende una Consulta Gratuita">Schedule a Free Consultation</h2>
   </div>
   <div class="contact-grid">
-    <div class="cinfo fi">
-      <div class="cinfo-img">
-        <img src="21%20a.png" alt="Consultation">
-      </div>
+    <div class="cinfo">
+      <div class="cinfo-img"><img src="21%20a.png" alt="Consultation"></div>
       <div class="cbox">
         <h4 data-en="Contact Information" data-es="Información de Contacto">Contact Information</h4>
-        <p>
-          📍 Tampa, Florida<br><br>
-          📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f1f6fef7d8aaa9ebecf7f6fdebf9fbfbf7edf6ecf1f6ffb6fbf7f5">[email&#160;protected]</a><br><br>
-          📞 (555) 123-4567<br><br>
-          🕐 <span data-en="Mon–Fri: 9am – 6pm EST" data-es="Lun–Vie: 9am – 6pm EST">Mon–Fri: 9am – 6pm EST</span>
-        </p>
+        <p>📍 Tampa, Florida<br><br>📧 info@21stonesaccounting.com<br><br>📞 (555) 123-4567<br><br>🕐 <span data-en="Mon–Fri: 9am – 6pm EST" data-es="Lun–Vie: 9am – 6pm EST">Mon–Fri: 9am – 6pm EST</span></p>
       </div>
     </div>
-    <div class="fw fi">
+    <div class="fw">
       <p class="fq" data-en="Let's Talk About Your Finances" data-es="Hablemos de Sus Finanzas">Let's Talk About Your Finances</p>
-      <p class="fh" data-en="Fill out the form and a member of our team will be in touch within 24 hours." data-es="Complete el formulario y un miembro de nuestro equipo se comunicará en menos de 24 horas.">Fill out the form and a member of our team will be in touch within 24 hours.</p>
+      <p class="fh" data-en="Fill out the form and we will be in touch within 24 hours." data-es="Complete el formulario y nos comunicaremos en menos de 24 horas.">Fill out the form and we will be in touch within 24 hours.</p>
       <div class="fi-row">
         <input class="fi-inp" type="text" data-placeholder-en="Full Name" data-placeholder-es="Nombre Completo" placeholder="Full Name">
         <input class="fi-inp" type="email" data-placeholder-en="Email Address" data-placeholder-es="Correo Electrónico" placeholder="Email Address">
@@ -398,7 +364,7 @@ footer{background:#003153;padding:52px 6vw 28px;}
         </select>
         <textarea class="fta" data-placeholder-en="Tell us about your needs..." data-placeholder-es="Cuéntenos sobre sus necesidades..." placeholder="Tell us about your needs..."></textarea>
       </div>
-      <div class="fn">
+      <div class="fn2">
         <button class="bp" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
       </div>
     </div>
@@ -408,11 +374,8 @@ footer{background:#003153;padding:52px 6vw 28px;}
 <footer>
   <div class="ft">
     <div class="fb">
-      <div class="flw">
-        <img src="21%20j.png" alt="21 Stones Logo" style="height:46px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span style="display:none;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#003153;">21 STONES</span>
-      </div>
-      <p data-en="Professional accounting and advisory services in Tampa, FL. Built on trust, expertise, and commitment to your financial success." data-es="Servicios profesionales de contabilidad y asesoría en Tampa, FL. Basados en confianza, experiencia y compromiso con su éxito financiero.">Professional accounting and advisory services in Tampa, FL. Built on trust, expertise, and commitment to your financial success.</p>
+      <div class="flw"><span>21 STONES</span></div>
+      <p data-en="Professional accounting and advisory services in Tampa, FL. Built on trust, expertise, and commitment to your success." data-es="Servicios profesionales de contabilidad en Tampa, FL. Basados en confianza, experiencia y compromiso con su éxito.">Professional accounting and advisory services in Tampa, FL. Built on trust, expertise, and commitment to your success.</p>
     </div>
     <div class="fc">
       <h4 data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h4>
@@ -425,12 +388,7 @@ footer{background:#003153;padding:52px 6vw 28px;}
     </div>
     <div class="fc">
       <h4 data-en="Contact" data-es="Contacto">Contact</h4>
-      <address>
-        21 Stones Accounting LLC<br>
-        Tampa, Florida<br><br>
-        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51383f373e11636022253e3f34223032323e243f25383f367f323e3c">[email&#160;protected]</a><br>
-        (555) 123-4567
-      </address>
+      <address>21 Stones Accounting LLC<br>Tampa, Florida<br><br>info@21stonesaccounting.com<br>(555) 123-4567</address>
     </div>
   </div>
   <div class="fbot">
@@ -442,21 +400,27 @@ footer{background:#003153;padding:52px 6vw 28px;}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const CL = { l: 'en' };
-function switchLang(l) {
-  CL.l = l;
-  document.documentElement.lang = l;
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const t = el.getAttribute('data-' + l);
-    if (!t) return;
-    if ((el.tagName === 'H1' || el.tagName === 'H2') && t.includes('<span')) el.innerHTML = t;
-    else el.textContent = t;
+<script>
+const CL={l:'en'};
+function switchLang(l){
+  CL.l=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const t=el.getAttribute('data-'+l);
+    if(!t)return;
+    if((el.tagName==='H1'||el.tagName==='H2')&&t.includes('<span'))el.innerHTML=t;
+    else el.textContent=t;
   });
-  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-    el.placeholder = el.getAttribute('data-placeholder-' + l);
+  document.querySelectorAll('[data-placeholder-en]').forEach(el=>{
+    el.placeholder=el.getAttribute('data-placeholder-'+l);
   });
-  document.getElementById('btnEN').classList.toggle('on', l === 'en');
-  document.getElementById('btnES').classList.toggle('on', l === 'es');
+  document.getElementById('btnEN').classList.toggle('on',l==='en');
+  document.getElementById('btnES').classList.toggle('on',l==='es');
 }
-const obs = new IntersectionObserver(es => {
+setTimeout(()=>{
+  const b=document.getElementById('langbar');
+  if(b)b.style.display='flex';
+},2000);
+</script>
+</body>
+</html>
