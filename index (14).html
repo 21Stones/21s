@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 Stones Accounting LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#003153;--gold:#C5A059;--r:4px;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;line-height:1.7;}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,49,83,0.98);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nl{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.nl-logo{height:48px;width:48px;background:#C5A059;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#003153;flex-shrink:0;}
+.nl-text{display:flex;flex-direction:column;}
+.nl-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#fff;letter-spacing:1px;line-height:1.1;}
+.nl-sub{font-size:9px;color:#C5A059;letter-spacing:2px;text-transform:uppercase;}
+.nc{display:flex;gap:20px;list-style:none;}
+.nc a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.9);cursor:pointer;}
+.nc a:hover{color:#C5A059;}
+.nr{display:flex;align-items:center;gap:12px;}
+.lt{display:flex;background:rgba(255,255,255,0.07);border:1px solid rgba(197,160,89,0.35);border-radius:20px;padding:3px;gap:2px;}
+.lb{padding:4px 12px;border-radius:16px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:transparent;color:rgba(255,255,255,0.5);}
+.lb.on{background:#C5A059;color:#003153;}
+.bp{background:#C5A059;color:#003153;padding:10px 22px;border-radius:var(--r);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;}
+.bp:hover{background:#D4B570;}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 6vw 80px;overflow:hidden;}
+.hbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop') center/cover no-repeat;}
+.hov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(0,49,83,0.96) 50%,rgba(0,49,83,0.6) 100%);}
+.hc{position:relative;z-index:2;max-width:660px;}
+.hey{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C5A059;margin-bottom:22px;display:flex;align-items:center;gap:8px;}
+.hey::before{content:'';width:28px;height:1px;background:#C5A059;display:inline-block;}
+#hero h1{font-size:clamp(32px,4.5vw,58px);font-weight:800;color:#fff;margin-bottom:20px;letter-spacing:-1px;}
+#hero h1 span{color:#C5A059;}
+.hs{font-size:16px;color:rgba(255,255,255,0.88);max-width:520px;margin-bottom:16px;font-weight:300;line-height:1.8;}
+.hflags{display:flex;gap:16px;margin-bottom:32px;}
+.hflag{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.75);}
+.hrow{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.hn{font-size:12px;color:rgba(255,255,255,0.75);}
+.hst{position:absolute;right:6vw;bottom:50px;z-index:2;display:flex;gap:36px;}
+.si{text-align:right;border-right:1px solid rgba(197,160,89,0.4);padding-right:24px;}
+.si:last-child{border-right:none;padding-right:0;}
+.sn{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#C5A059;display:block;}
+.sl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-top:3px;display:block;}
+
+/* LOGO BAND */
+#logoband{background:#C5A059;padding:18px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.lb-left{display:flex;align-items:center;gap:20px;}
+.lb-circle{width:64px;height:64px;background:#003153;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#C5A059;flex-shrink:0;border:3px solid #003153;}
+.lb-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#003153;letter-spacing:0.5px;}
+.lb-sub{font-size:12px;color:rgba(0,49,83,0.75);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+.lb-flags{display:flex;gap:12px;align-items:center;}
+.lb-flag{display:flex;align-items:center;gap:6px;background:rgba(0,49,83,0.12);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:#003153;}
+
+/* ABOUT */
+#about{padding:90px 6vw;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.ai{border-radius:var(--r);overflow:hidden;height:480px;position:relative;}
+.ai img{width:100%;height:100%;object-fit:cover;}
+.aib{position:absolute;bottom:20px;left:20px;background:#C5A059;color:#003153;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:8px 16px;border-radius:var(--r);}
+.ey{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C5A059;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.ey::before{content:'';width:22px;height:1px;background:#C5A059;display:inline-block;}
+.tt{font-size:clamp(24px,2.8vw,36px);font-weight:700;color:#003153;margin-bottom:14px;letter-spacing:-.5px;}
+.tt.w{color:#fff;}
+.at p{font-size:15px;color:#444;line-height:1.8;margin-bottom:18px;}
+.ah{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.ad{width:6px;height:6px;background:#C5A059;border-radius:50%;margin-top:9px;flex-shrink:0;}
+.ah p{margin:0;font-size:14px;color:#444;}
+
+/* PRESENCE */
+#presence{background:#F4F4F4;padding:90px 6vw;}
+.prg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.prc{border-radius:var(--r);overflow:hidden;position:relative;height:360px;}
+.prc img{width:100%;height:100%;object-fit:cover;}
+.prc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,49,83,0.92) 40%,rgba(0,49,83,0.2) 100%);}
+.prc-body{position:absolute;bottom:0;left:0;right:0;padding:28px;}
+.prc-flag{font-size:32px;margin-bottom:8px;display:block;}
+.prc-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;}
+.prc-sub{font-size:12px;color:#C5A059;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:block;}
+.prc-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.prc-list li{font-size:13px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:8px;}
+.prc-list li::before{content:'✓';color:#C5A059;font-weight:700;font-size:12px;}
+
+/* SERVICES */
+#sectores{background:#fff;padding:90px 6vw;}
+.sec-header{text-align:center;margin-bottom:48px;}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.sc{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid #DDD;transition:transform .25s,box-shadow .25s;cursor:default;}
+.sc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,49,83,0.12);}
+.sim{height:180px;overflow:hidden;}
+.sim img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.sc:hover .sim img{transform:scale(1.05);}
+.sb{padding:24px;}
+.sic{width:36px;height:36px;border:1px solid #C5A059;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;}
+.sc h3{font-size:16px;font-weight:700;color:#003153;margin-bottom:8px;}
+.sc p{font-size:13px;color:#555;line-height:1.65;}
+
+/* WHY US */
+#valor{background:#003153;padding:90px 6vw;position:relative;overflow:hidden;}
+.vbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&auto=format&fit=crop') center/cover no-repeat;opacity:0.07;}
+.vc{position:relative;z-index:2;}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);overflow:hidden;margin-top:48px;}
+.pl{padding:44px 36px;border-right:1px solid rgba(255,255,255,0.1);}
+.pl:last-child{border-right:none;}
+.pl:hover{background:rgba(197,160,89,0.06);}
+.pn{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:#C5A059;margin-bottom:18px;display:block;}
+.pl h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:12px;}
+.pl p{font-size:14px;color:rgba(255,255,255,0.83);line-height:1.75;}
+
+/* CTA */
+#cta{position:relative;overflow:hidden;}
+#cta .cbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&auto=format&fit=crop') center/cover no-repeat;}
+#cta .cov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,49,83,0.95) 52%,rgba(0,49,83,0.55) 100%);}
+#cta .cc{position:relative;z-index:2;padding:80px 6vw;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+#cta h2{font-size:clamp(20px,2.8vw,34px);font-weight:800;color:#fff;max-width:500px;line-height:1.25;}
+#cta h2 span{color:#C5A059;}
+.cr{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.cn{font-size:12px;color:rgba(255,255,255,0.78);}
+
+/* CONTACT */
+#contacto{background:#F4F4F4;padding:90px 6vw;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;max-width:1100px;margin:0 auto;}
+.cinfo{display:flex;flex-direction:column;gap:20px;}
+.cinfo-img{border-radius:var(--r);overflow:hidden;height:200px;}
+.cinfo-img img{width:100%;height:100%;object-fit:cover;}
+.cbox{background:#003153;border-radius:var(--r);padding:28px;flex:1;}
+.cbox h4{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#C5A059;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.cbox p{font-size:13px;color:rgba(255,255,255,0.8);line-height:2;}
+.cbox a{color:#C5A059;text-decoration:none;}
+.fw{background:#fff;border:1px solid #DDD;border-radius:var(--r);padding:40px 36px;}
+.fq{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;color:#003153;margin-bottom:8px;}
+.fh{font-size:13px;color:#666;margin-bottom:28px;}
+.fi-row{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+.fi-inp{width:100%;padding:13px 16px;border:1px solid #DDD;border-radius:var(--r);font-family:'Open Sans',sans-serif;font-size:14px;color:#333;outline:none;transition:border .2s;}
+.fi-inp:focus{border-color:#C5A059;}
+.fta{width:100%;padding:14px 16px;border:1px solid #DDD;border-radius:var(--r);font-family:'Open Sans',sans-serif;font-size:14px;color:#333;resize:vertical;min-height:110px;outline:none;transition:border .2s;}
+.fta:focus{border-color:#C5A059;}
+.fn2{display:flex;justify-content:flex-end;margin-top:24px;}
+
+/* FOOTER */
+footer{background:#003153;padding:52px 6vw 28px;}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:52px;margin-bottom:44px;}
+.flw{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.flw-circle{width:52px;height:52px;background:#C5A059;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#003153;flex-shrink:0;}
+.flw-text{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#fff;}
+.flw-sub{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;}
+.fb p{font-size:13px;color:rgba(255,255,255,0.73);line-height:1.8;max-width:250px;margin-top:8px;}
+.fc h4{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C5A059;margin-bottom:16px;}
+.fc ul{list-style:none;}
+.fc li{margin-bottom:9px;}
+.fc a{font-size:13px;color:rgba(255,255,255,0.73);text-decoration:none;cursor:pointer;}
+.fc a:hover{color:#C5A059;}
+.fc address{font-style:normal;font-size:13px;color:rgba(255,255,255,0.73);line-height:2;}
+.fc address a{color:#C5A059;text-decoration:none;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.fcp{font-size:12px;color:rgba(255,255,255,0.45);}
+.fleg{display:flex;gap:18px;}
+.fleg a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;cursor:pointer;}
+.fleg a:hover{color:#C5A059;}
+
+/* LANG BANNER */
+#lbanner{position:fixed;bottom:20px;right:20px;z-index:200;background:#003153;border:1px solid #C5A059;border-radius:var(--r);padding:12px 18px;display:none;align-items:center;gap:10px;box-shadow:0 8px 28px rgba(0,0,0,0.3);}
+#lbanner p{font-size:12px;color:rgba(255,255,255,0.9);}
+.lbb{background:#C5A059;color:#003153;border:none;padding:6px 14px;border-radius:var(--r);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;cursor:pointer;text-transform:uppercase;}
+.lbx{background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:17px;line-height:1;}
+
+/* CONFIRM */
+#conf{display:none;background:#003153;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 6vw;}
+.cico{width:60px;height:60px;border:1px solid #C5A059;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:26px;color:#C5A059;}
+
+@media(max-width:860px){
+  .nc{display:none;}
+  .nl-text{display:none;}
+  #about,.prg,.contact-grid{grid-template-columns:1fr;}
+  .ai{height:300px;}
+  .sg,.pg{grid-template-columns:1fr;}
+  .pl{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .ft{grid-template-columns:1fr;gap:28px;}
+  .hst{position:static;margin-top:40px;flex-wrap:wrap;gap:16px;}
+  .si{text-align:left;border-right:none;border-bottom:1px solid rgba(197,160,89,0.2);padding-bottom:10px;}
+  .fw{padding:28px 18px;}
+  #cta .cc{flex-direction:column;}
+  .cr{align-items:flex-start;}
+  .lb-flags{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div id="lbanner">
+  <p data-en="Would you prefer this page in English?" data-es="¿Prefiere ver esta página en español?">¿Prefiere ver esta página en español?</p>
+  <button class="lbb" onclick="switchLang('es');closeBanner()" data-en="View in English" data-es="Ver en Español">Ver en Español</button>
+  <button class="lbx" onclick="closeBanner()">✕</button>
+</div>
+
+<div id="main">
+
+<nav>
+  <div class="nl" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <div class="nl-logo">21</div>
+    <div class="nl-text">
+      <span class="nl-name">21 STONES ACCOUNTING</span>
+      <span class="nl-sub">Tampa, FL · Lima, Perú</span>
+    </div>
+  </div>
+  <ul class="nc">
+    <li><a onclick="goSec('about')" data-en="About" data-es="Nosotros">About</a></li>
+    <li><a onclick="goSec('sectores')" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a onclick="goSec('presence')" data-en="USA & Peru" data-es="USA y Perú">USA & Peru</a></li>
+    <li><a onclick="goSec('valor')" data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a></li>
+    <li><a onclick="goSec('contacto')" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nr">
+    <div class="lt">
+      <button class="lb on" id="btnEN" onclick="switchLang('en')">EN</button>
+      <button class="lb" id="btnES" onclick="switchLang('es')">ES</button>
+    </div>
+    <button class="bp" onclick="goSec('contacto')" data-en="Get Started" data-es="Comenzar">Get Started</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="hov"></div>
+  <div class="hc">
+    <div class="hey" data-en="Tampa, FL · Lima, Perú — International Accounting" data-es="Tampa, FL · Lima, Perú — Contabilidad Internacional">Tampa, FL · Lima, Perú — International Accounting</div>
+    <h1 data-en="Financial Clarity.<br><span>Strategic Growth.</span>" data-es="Claridad Financiera.<br><span>Crecimiento Estratégico.</span>">Financial Clarity.<br><span>Strategic Growth.</span></h1>
+    <p class="hs" data-en="21 Stones Accounting LLC delivers expert accounting, tax, and advisory services — serving businesses across the USA and Peru with excellence and integrity." data-es="21 Stones Accounting LLC ofrece servicios expertos de contabilidad, impuestos y asesoría — sirviendo a empresas en USA y Perú con excelencia e integridad.">21 Stones Accounting LLC delivers expert accounting, tax, and advisory services — serving businesses across the USA and Peru with excellence and integrity.</p>
+    <div class="hflags">
+      <span class="hflag">🇺🇸 <span data-en="Tampa, Florida — HQ" data-es="Tampa, Florida — Sede Principal">Tampa, Florida — HQ</span></span>
+      <span class="hflag">🇵🇪 <span data-en="Lima, Peru — Strategic Partner" data-es="Lima, Perú — Socio Estratégico">Lima, Peru — Strategic Partner</span></span>
+    </div>
+    <div class="hrow">
+      <button class="bp" onclick="goSec('contacto')" data-en="Schedule a Consultation" data-es="Agendar una Consulta">Schedule a Consultation</button>
+      <span class="hn" data-en="✓ No commitment required" data-es="✓ Sin compromiso">✓ No commitment required</span>
+    </div>
+  </div>
+  <div class="hst">
+    <div class="si"><span class="sn">500+</span><span class="sl" data-en="Clients Served" data-es="Clientes Atendidos">Clients Served</span></div>
+    <div class="si"><span class="sn">15+</span><span class="sl" data-en="Years Experience" data-es="Años de Experiencia">Years Experience</span></div>
+    <div class="si"><span class="sn">2</span><span class="sl" data-en="Countries" data-es="Países">Countries</span></div>
+  </div>
+</section>
+
+<!-- LOGO BAND -->
+<div id="logoband">
+  <div class="lb-left">
+    <div class="lb-circle">21</div>
+    <div>
+      <div class="lb-title">21 Stones Accounting LLC</div>
+      <div class="lb-sub" data-en="Bookkeeping · Tax Services · Financial Advisory" data-es="Contabilidad · Servicios Fiscales · Asesoría Financiera">Bookkeeping · Tax Services · Financial Advisory</div>
+    </div>
+  </div>
+  <div class="lb-flags">
+    <span class="lb-flag">🇺🇸 <span data-en="Tampa, Florida — HQ" data-es="Tampa, Florida — Sede">Tampa, Florida — HQ</span></span>
+    <span class="lb-flag">🇵🇪 <span data-en="Lima, Peru — Partner" data-es="Lima, Perú — Socio">Lima, Peru — Partner</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="ai">
+    <img src="21%20h.png" alt="21 Stones Team" onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop'">
+    <div class="aib" data-en="Founded 2008 · USA & Peru" data-es="Fundada 2008 · USA y Perú">Founded 2008 · USA & Peru</div>
+  </div>
+  <div class="at">
+    <div class="ey" data-en="About Us" data-es="Sobre Nosotros">About Us</div>
+    <h2 class="tt" data-en="Your Trusted Financial Partner Across Borders" data-es="Su Socio Financiero de Confianza a Través de Fronteras">Your Trusted Financial Partner Across Borders</h2>
+    <p data-en="At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. With headquarters in Tampa, Florida and a strategic presence in Lima, Peru, we serve clients across two countries with the same dedication and expertise." data-es="En 21 Stones Accounting LLC, creemos que una gestión financiera sólida es la base de todo negocio exitoso. Con sede principal en Tampa, Florida y presencia estratégica en Lima, Perú, servimos a clientes en dos países con la misma dedicación y experiencia.">At 21 Stones Accounting LLC, we believe that sound financial management is the foundation of every successful business. With headquarters in Tampa, Florida and a strategic presence in Lima, Peru, we serve clients across two countries with the same dedication and expertise.</p>
+    <div class="ah"><div class="ad"></div><p data-en="Personalized accounting solutions tailored to your unique needs" data-es="Soluciones contables personalizadas según sus necesidades únicas">Personalized accounting solutions tailored to your unique needs</p></div>
+    <div class="ah"><div class="ad"></div><p data-en="Proactive tax planning to minimize liabilities and maximize savings" data-es="Planificación fiscal proactiva para minimizar obligaciones y maximizar ahorros">Proactive tax planning to minimize liabilities and maximize savings</p></div>
+    <div class="ah"><div class="ad"></div><p data-en="Bilingual service in English and Spanish" data-es="Servicio bilingüe en inglés y español">Bilingual service in English and Spanish</p></div>
+    <div class="ah"><div class="ad"></div><p data-en="Cross-border expertise for USA and Peru businesses" data-es="Experiencia transfronteriza para empresas en USA y Perú">Cross-border expertise for USA and Peru businesses</p></div>
+  </div>
+</section>
+
+<!-- USA & PERU PRESENCE -->
+<section id="presence">
+  <div class="sec-header">
+    <div class="ey" style="justify-content:center;" data-en="Our Presence" data-es="Nuestra Presencia">Our Presence</div>
+    <h2 class="tt" data-en="Two Countries, One Standard of Excellence" data-es="Dos Países, Un Estándar de Excelencia">Two Countries, One Standard of Excellence</h2>
+  </div>
+  <div class="prg">
+    <div class="prc">
+      <img src="https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?w=800&auto=format&fit=crop" alt="Tampa Florida">
+      <div class="prc-ov"></div>
+      <div class="prc-body">
+        <span class="prc-flag">🇺🇸</span>
+        <div class="prc-title" data-en="Tampa, Florida" data-es="Tampa, Florida">Tampa, Florida</div>
+        <span class="prc-sub" data-en="Headquarters" data-es="Sede Principal">Headquarters</span>
+        <ul class="prc-list">
+          <li data-en="Bookkeeping & Tax Services" data-es="Contabilidad y Servicios Fiscales">Bookkeeping & Tax Services</li>
+          <li data-en="IRS Representation" data-es="Representación ante el IRS">IRS Representation</li>
+          <li data-en="Business Advisory" data-es="Asesoría Empresarial">Business Advisory</li>
+          <li data-en="Payroll & Financial Reporting" data-es="Nómina e Informes Financieros">Payroll & Financial Reporting</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prc">
+      <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop" alt="Lima Peru">
+      <div class="prc-ov"></div>
+      <div class="prc-body">
+        <span class="prc-flag">🇵🇪</span>
+        <div class="prc-title" data-en="Lima, Peru" data-es="Lima, Perú">Lima, Peru</div>
+        <span class="prc-sub" data-en="Strategic Partner" data-es="Socio Estratégico">Strategic Partner</span>
+        <ul class="prc-list">
+          <li data-en="Cross-border business setup" data-es="Constitución de empresas transfronterizas">Cross-border business setup</li>
+          <li data-en="Tax compliance in Peru" data-es="Cumplimiento tributario en Perú">Tax compliance in Peru</li>
+          <li data-en="Investment advisory" data-es="Asesoría de inversiones">Investment advisory</li>
+          <li data-en="USA–Peru business bridge" data-es="Puente empresarial USA–Perú">USA–Peru business bridge</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="sectores">
+  <div class="sec-header">
+    <div class="ey" style="justify-content:center;" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</div>
+    <h2 class="tt" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+  </div>
+  <div class="sg">
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Bookkeeping"></div>
+      <div class="sb"><div class="sic">📊</div>
+        <h3 data-en="Bookkeeping" data-es="Teneduría de Libros">Bookkeeping</h3>
+        <p data-en="Accurate, timely bookkeeping so you always know where your business stands financially." data-es="Contabilidad precisa y puntual para que siempre conozca la situación financiera de su negocio.">Accurate, timely bookkeeping so you always know where your business stands financially.</p>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&auto=format&fit=crop" alt="Tax Preparation"></div>
+      <div class="sb"><div class="sic">📋</div>
+        <h3 data-en="Tax Preparation" data-es="Preparación de Impuestos">Tax Preparation</h3>
+        <p data-en="Individual and business tax returns prepared with precision to ensure compliance and maximize refunds." data-es="Declaraciones de impuestos individuales y empresariales preparadas con precisión para garantizar el cumplimiento y maximizar reembolsos.">Individual and business tax returns prepared with precision to ensure compliance and maximize refunds.</p>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop" alt="Business Advisory"></div>
+      <div class="sb"><div class="sic">💼</div>
+        <h3 data-en="Business Advisory" data-es="Asesoría Empresarial">Business Advisory</h3>
+        <p data-en="Strategic guidance to help your business grow, from entity selection to financial forecasting." data-es="Orientación estratégica para hacer crecer su negocio, desde la selección de entidad hasta la proyección financiera.">Strategic guidance to help your business grow, from entity selection to financial forecasting.</p>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop" alt="Financial Reporting"></div>
+      <div class="sb"><div class="sic">📈</div>
+        <h3 data-en="Financial Reporting" data-es="Informes Financieros">Financial Reporting</h3>
+        <p data-en="Clear, detailed financial statements that give you actionable insights into your business." data-es="Estados financieros claros y detallados con información útil sobre su negocio.">Clear, detailed financial statements that give you actionable insights into your business.</p>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop" alt="IRS Representation"></div>
+      <div class="sb"><div class="sic">🏛️</div>
+        <h3 data-en="IRS Representation" data-es="Representación ante el IRS">IRS Representation</h3>
+        <p data-en="Professional representation during audits, disputes, and IRS correspondence." data-es="Representación profesional durante auditorías, disputas y correspondencia con el IRS.">Professional representation during audits, disputes, and IRS correspondence.</p>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sim"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop" alt="Payroll Services"></div>
+      <div class="sb"><div class="sic">💰</div>
+        <h3 data-en="Payroll Services" data-es="Servicios de Nómina">Payroll Services</h3>
+        <p data-en="Complete payroll processing so you can focus on running your business." data-es="Procesamiento completo de nómina para que pueda concentrarse en dirigir su negocio.">Complete payroll processing so you can focus on running your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="valor">
+  <div class="vbg"></div>
+  <div class="vc">
+    <div style="text-align:center;">
+      <div class="ey" style="justify-content:center;" data-en="Why Choose Us" data-es="Por Qué Elegirnos">Why Choose Us</div>
+      <h2 class="tt w" data-en="The 21 Stones Difference" data-es="La Diferencia 21 Stones">The 21 Stones Difference</h2>
+    </div>
+    <div class="pg">
+      <div class="pl">
+        <span class="pn" data-en="01 — Expertise" data-es="01 — Experiencia">01 — Expertise</span>
+        <h3 data-en="Certified Professionals" data-es="Profesionales Certificados">Certified Professionals</h3>
+        <p data-en="Our team of CPAs and accounting professionals brings deep expertise across industries in both the USA and Peru." data-es="Nuestro equipo de CPAs y profesionales contables aporta profunda experiencia en diversas industrias en USA y Perú.">Our team of CPAs and accounting professionals brings deep expertise across industries in both the USA and Peru.</p>
+      </div>
+      <div class="pl">
+        <span class="pn" data-en="02 — Bilingual" data-es="02 — Bilingüe">02 — Bilingual</span>
+        <h3 data-en="English & Spanish" data-es="Inglés y Español">English & Spanish</h3>
+        <p data-en="We serve clients in both English and Spanish, eliminating language barriers and ensuring clear, effective communication at all times." data-es="Atendemos a nuestros clientes en inglés y español, eliminando barreras idiomáticas y garantizando una comunicación clara y efectiva en todo momento.">We serve clients in both English and Spanish, eliminating language barriers and ensuring clear, effective communication at all times.</p>
+      </div>
+      <div class="pl">
+        <span class="pn" data-en="03 — Results" data-es="03 — Resultados">03 — Results</span>
+        <h3 data-en="Measurable Impact" data-es="Impacto Medible">Measurable Impact</h3>
+        <p data-en="From tax savings to streamlined processes, we deliver real results that contribute directly to your financial success across borders." data-es="Desde ahorros fiscales hasta procesos optimizados, entregamos resultados reales que contribuyen a su éxito financiero a través de fronteras.">From tax savings to streamlined processes, we deliver real results that contribute directly to your financial success across borders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cbg"></div>
+  <div class="cov"></div>
+  <div class="cc">
+    <h2 data-en="Ready to Take Control of <span>Your Finances?</span>" data-es="¿Listo para Tomar Control de <span>Sus Finanzas?</span>">Ready to Take Control of <span>Your Finances?</span></h2>
+    <div class="cr">
+      <button class="bp" onclick="goSec('contacto')" data-en="Schedule Free Consultation" data-es="Agendar Consulta Gratis">Schedule Free Consultation</button>
+      <span class="cn" data-en="✓ No obligation · USA & Peru · Response within 24h" data-es="✓ Sin obligación · USA y Perú · Respuesta en 24h">✓ No obligation · USA & Peru · Response within 24h</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="sec-header" style="text-align:center;margin-bottom:40px;">
+    <div class="ey" style="justify-content:center;" data-en="Get In Touch" data-es="Contáctenos">Get In Touch</div>
+    <h2 class="tt" data-en="Schedule a Free Consultation" data-es="Agende una Consulta Gratuita">Schedule a Free Consultation</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="cinfo">
+      <div class="cinfo-img">
+        <img src="21%20a.png" alt="Consultation" onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop'">
+      </div>
+      <div class="cbox">
+        <h4 data-en="Contact Information" data-es="Información de Contacto">Contact Information</h4>
+        <p>
+          🇺🇸 Tampa, Florida, USA<br>
+          🇵🇪 Lima, Perú<br><br>
+          📧 <a href="mailto:info@21stonesaccounting.com">info@21stonesaccounting.com</a><br><br>
+          📞 (555) 123-4567<br><br>
+          🕐 <span data-en="Mon–Fri: 9am – 6pm EST" data-es="Lun–Vie: 9am – 6pm EST">Mon–Fri: 9am – 6pm EST</span>
+        </p>
+      </div>
+    </div>
+    <div class="fw">
+      <p class="fq" data-en="Let's Talk About Your Finances" data-es="Hablemos de Sus Finanzas">Let's Talk About Your Finances</p>
+      <p class="fh" data-en="Fill out the form and a member of our team will be in touch within 24 hours." data-es="Complete el formulario y un miembro de nuestro equipo se comunicará en menos de 24 horas.">Fill out the form and a member of our team will be in touch within 24 hours.</p>
+      <div class="fi-row">
+        <input class="fi-inp" type="text" data-placeholder-en="Full Name" data-placeholder-es="Nombre Completo" placeholder="Full Name">
+        <input class="fi-inp" type="email" data-placeholder-en="Email Address" data-placeholder-es="Correo Electrónico" placeholder="Email Address">
+        <input class="fi-inp" type="tel" data-placeholder-en="Phone Number" data-placeholder-es="Número de Teléfono" placeholder="Phone Number">
+        <select class="fi-inp">
+          <option data-en="Select Country" data-es="Seleccione País">Select Country</option>
+          <option data-en="🇺🇸 United States" data-es="🇺🇸 Estados Unidos">🇺🇸 United States</option>
+          <option data-en="🇵🇪 Peru" data-es="🇵🇪 Perú">🇵🇪 Peru</option>
+        </select>
+        <select class="fi-inp">
+          <option data-en="Select a Service" data-es="Seleccione un Servicio">Select a Service</option>
+          <option data-en="Bookkeeping" data-es="Teneduría de Libros">Bookkeeping</option>
+          <option data-en="Tax Preparation" data-es="Preparación de Impuestos">Tax Preparation</option>
+          <option data-en="Business Advisory" data-es="Asesoría Empresarial">Business Advisory</option>
+          <option data-en="Financial Reporting" data-es="Informes Financieros">Financial Reporting</option>
+          <option data-en="IRS Representation" data-es="Representación ante el IRS">IRS Representation</option>
+          <option data-en="Payroll Services" data-es="Servicios de Nómina">Payroll Services</option>
+          <option data-en="Cross-border Services" data-es="Servicios Transfronterizos">Cross-border Services</option>
+        </select>
+        <textarea class="fta" data-placeholder-en="Tell us about your needs..." data-placeholder-es="Cuéntenos sobre sus necesidades..." placeholder="Tell us about your needs..."></textarea>
+      </div>
+      <div class="fn2">
+        <button class="bp" onclick="doSubmit()" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="fb">
+      <div class="flw">
+        <div class="flw-circle">21</div>
+        <div>
+          <div class="flw-text">21 STONES</div>
+          <div class="flw-sub">Accounting LLC</div>
+        </div>
+      </div>
+      <p data-en="Professional accounting and advisory services in Tampa, FL and Lima, Peru. Built on trust, expertise, and commitment to your financial success." data-es="Servicios profesionales de contabilidad y asesoría en Tampa, FL y Lima, Perú. Basados en confianza, experiencia y compromiso con su éxito financiero.">Professional accounting and advisory services in Tampa, FL and Lima, Peru. Built on trust, expertise, and commitment to your financial success.</p>
+    </div>
+    <div class="fc">
+      <h4 data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h4>
+      <ul>
+        <li><a onclick="goSec('about')" data-en="About Us" data-es="Nosotros">About Us</a></li>
+        <li><a onclick="goSec('sectores')" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a onclick="goSec('presence')" data-en="USA & Peru" data-es="USA y Perú">USA & Peru</a></li>
+        <li><a onclick="goSec('valor')" data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a></li>
+        <li><a onclick="goSec('contacto')" data-en="Contact" data-es="Contacto">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-en="Contact" data-es="Contacto">Contact</h4>
+      <address>
+        🇺🇸 Tampa, Florida, USA<br>
+        🇵🇪 Lima, Perú<br><br>
+        <a href="mailto:info@21stonesaccounting.com">info@21stonesaccounting.com</a><br>
+        (555) 123-4567<br><br>
+        <span data-en="Mon–Fri: 9am – 6pm EST" data-es="Lun–Vie: 9am – 6pm EST">Mon–Fri: 9am – 6pm EST</span>
+      </address>
+    </div>
+  </div>
+  <div class="fbot">
+    <span class="fcp" data-en="© 2025 21 Stones Accounting LLC · All rights reserved" data-es="© 2025 21 Stones Accounting LLC · Todos los derechos reservados">© 2025 21 Stones Accounting LLC · All rights reserved</span>
+    <div class="fleg">
+      <a href="#" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a href="#" data-en="Terms" data-es="Términos">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- end #main -->
+
+<!-- CONFIRM -->
+<div id="conf">
+  <div class="cico">✓</div>
+  <h2 style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:800;color:#fff;margin-bottom:14px;" data-en="We've received your information!" data-es="¡Hemos recibido su información!">We've received your information!</h2>
+  <p style="font-size:15px;color:rgba(255,255,255,0.85);max-width:460px;margin:0 auto 44px;font-weight:300;" data-en="A member of our team will contact you within 24 hours." data-es="Un miembro de nuestro equipo se comunicará con usted en menos de 24 horas.">A member of our team will contact you within 24 hours.</p>
+  <button class="bp" onclick="document.getElementById('main').style.display='block';document.getElementById('conf').style.display='none';window.scrollTo(0,0)" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</button>
+</div>
+
+<script>
+const CL={l:'en'};
+function switchLang(l){
+  CL.l=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const t=el.getAttribute('data-'+l);
+    if(!t)return;
+    if((el.tagName==='H1'||el.tagName==='H2')&&t.includes('<span'))el.innerHTML=t;
+    else el.textContent=t;
+  });
+  document.querySelectorAll('[data-placeholder-en]').forEach(el=>{
+    el.placeholder=el.getAttribute('data-placeholder-'+l);
+  });
+  document.getElementById('btnEN').classList.toggle('on',l==='en');
+  document.getElementById('btnES').classList.toggle('on',l==='es');
+}
+function goSec(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+function closeBanner(){
+  document.getElementById('lbanner').style.display='none';
+}
+function doSubmit(){
+  document.getElementById('main').style.display='none';
+  const c=document.getElementById('conf');
+  if(c){c.style.display='flex';}
+  window.scrollTo(0,0);
+}
+setTimeout(()=>{
+  const b=document.getElementById('lbanner');
+  if(b)b.style.display='flex';
+},2500);
+</script>
+</body>
+</html>
